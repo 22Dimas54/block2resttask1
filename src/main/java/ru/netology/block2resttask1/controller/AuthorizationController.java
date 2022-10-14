@@ -1,9 +1,10 @@
 package ru.netology.block2resttask1.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Repository;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 import ru.netology.block2resttask1.Authorities;
+import ru.netology.block2resttask1.User;
 import ru.netology.block2resttask1.service.AuthorizationService;
 
 import java.util.List;
@@ -12,8 +13,8 @@ import java.util.List;
 public class AuthorizationController {
     private AuthorizationService service = new AuthorizationService();
 
-    @GetMapping("/authorize")
-    public List<Authorities> getAuthorities(@RequestParam("user") String user, @RequestParam("password") String password) {
-        return service.getAuthorities(user, password);
+    @PostMapping("/authorize")
+    public List<Authorities> getAuthorities(@RequestBody @Validated User user) {
+        return service.getAuthorities(user);
     }
 }

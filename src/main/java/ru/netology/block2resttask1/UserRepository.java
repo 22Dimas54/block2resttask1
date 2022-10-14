@@ -7,8 +7,8 @@ public class UserRepository {
     private final String NAME_USER = "admin";
     private final String PASSWORD_USER = "admin";
 
-    public List<Authorities> getUserAuthorities(String user, String password) {
-        if (user.equals(NAME_USER) & password.equals(PASSWORD_USER)) {
+    public List<Authorities> getUserAuthorities(User user) {
+        if (user.getName().equals(NAME_USER) & user.getPassword().equals(PASSWORD_USER)) {
             List<Authorities> authorities = new ArrayList<>();
             authorities.add(Authorities.DELETE);
             authorities.add(Authorities.WRITE);

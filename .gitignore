@@ -27,6 +27,10 @@ Thumbs.db
 .idea
 #.idea/workspace.xml - remove # and delete .idea if it better suit your needs.
 .gradle
+.gradle
+gradlew.bat
+HELP.md
+settings.gradle
 build/
 .navigation
 captures/
